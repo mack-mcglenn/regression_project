@@ -141,7 +141,7 @@ def show_corr(train):
     plt.show()
     #Heatmap
     corr = train.corr(method='spearman')
-    sb.heatmap(corr, cmap='Greens', annot=False, mask = np.triu(corr), annot_kws={"fontsize":8})
+    sb.heatmap(corr, cmap='Greens', annot=True, mask = np.triu(corr), annot_kws={"fontsize":8})
     plt.title('Heatmap Visualization of Correlation of Metrics')
     plt.show()
     
