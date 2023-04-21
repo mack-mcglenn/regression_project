@@ -119,3 +119,39 @@ Here are the steps I took during the exploration phase:
     - Returns the mean and median tax value of homes in all three counties
 
 
+## 4. Modeling
+
+The goal of my modeling is to reduce RMSE for train and validate data. I'll calculate my RMSE for mean and median data, and I'll finish by comparing my models to that data. I'm only dropping my non-numeric features for modeling.
+
+#### Features kept:
+- beds
+- baths
+- tax_val
+- sq_ft
+- Los Angeles
+- Orange County
+- Ventura
+- yard_sqft
+
+#### Baseline
+
+![image](https://user-images.githubusercontent.com/122935207/233749846-bd74cdfe-d6ae-40bf-9c43-2646e877a8b2.png)
+
+**Models Used** 
+
+- Polynomial Features
+- OLS 
+- LASSO LARS
+
+**Outcome**
+![image](https://user-images.githubusercontent.com/122935207/233749937-22e63c2c-c1cc-4682-ad9f-63224aad2a94.png)
+
+My best model is polynomial features with a degree of 5. It outperforms my baseline mean validate RMSE by $17,530, or 9%, and has r2 difference in the train and validate sets that are nearly identical
+
+### CONCLUSION
+
+- During exploration, I found that bathroom count was a really great indicator of predicting tax value within a home. Feature engineering the different yard sizes to predicts home tax value also provided valuable insights. However, the best indicator of tax value was property county location. When exploring this data in the future, I would start by separating the data by county and seeing how the features I chose shift in correlation across the counties individually.
+
+#### Recommendations
+
+As someone who has worked with residential property data before, I understand that there is a differnce in tax value and assessed property (or market) value. Tax value is calculated by the county where the property is located and is calculated by an assessor from that county. The assessor looks at comps (comperable properties) that have recently been sold, the value of recent structural improvements, and the cost of replacing the home (or the property it's on) if it were destroyed. Tax value usually represents 80% of market value. Market value also relies on comps, but also on appraisals, which are usually based on square footage. In the future, I would base this project around predicting market value.
