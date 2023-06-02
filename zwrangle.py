@@ -1,5 +1,15 @@
-#!/usr/bin/env python
-# coding: utf-8
+# ****To access data from CodeUp MySQL database****:
+
+# user = 'host name'
+# password = 'user paswoord'
+# host = 'data.codeup.com'
+# db = 'zillow'
+
+# def get_db_url(user, host, password, db):
+    
+#     url = f'mysql+pymysql://{env.user}:{env.password}@{env.host}/{db}'
+#     return url
+
 
 # In[9]:
 
