@@ -1,6 +1,9 @@
-# # Zillow Regression Project
-Mack McGlenn, O'neil Cohort
+## Zillow Regression Project
+Mack McGlenn
+April 2023
 
+![zillow](https://github.com/mack-mcglenn/regression_project/assets/122935207/86f6e624-3b75-423a-9ce2-90aff8c33aba)
+ 
 ### Project Overview
 _____________________________________________________________________________________
 This project will identify key drivers in determining tax value from the 2017 Zillow property dataset. Those drivers will then be taken to create a regression model which will best predict a home's future tax value.
@@ -25,10 +28,10 @@ This project will identify key drivers in determining tax value from the 2017 Zi
 
 **Deliverables**
 
-- a complete readme.md
-- a final report (.ipynb)
-- wrangle.py
-- exploratory workbook
+- A complete readme.md file outlining the scope and findings of this project
+- A wrangle.py folder that contains the functions called in this project
+- A working notebook (.ipynb) that shows my steps through the data science pipeline, issues I ran into allong the way, and steps taken to build functions
+- A final report file (.ipynb) that walks through all steps of the outline below
 
 
 ### Project Planning
@@ -44,7 +47,6 @@ ________________________________________________________________________________
 6. Conclusion
 
 _____________________________________________________________________________________
-
 
 ## 1. Acquire & Prepare
 
@@ -68,6 +70,8 @@ calculatedfinishedsquarefeet, fips, lotsizesquarefeet,
 2. prep_zillow(df)
 3. remove_outliers(df, columns)
 4. split_zillow(df)
+
+![203F2D6D-A0B2-4732-8408-732B86CCB401](https://github.com/mack-mcglenn/regression_project/assets/122935207/d288638c-9411-4a4c-a9f5-9744d479a522) 
 
 
 ## 2. Exploration/ Correlation Analysis
@@ -144,6 +148,7 @@ The goal of my modeling is to reduce RMSE for train and validate data. I'll calc
 - LASSO LARS
 
 **Outcome**
+
 ![image](https://user-images.githubusercontent.com/122935207/233749937-22e63c2c-c1cc-4682-ad9f-63224aad2a94.png)
 
 My best model is polynomial features with a degree of 5. It outperforms my baseline mean validate RMSE by $17,530, or 9%, and has r2 difference in the train and validate sets that are nearly identical
@@ -154,4 +159,14 @@ My best model is polynomial features with a degree of 5. It outperforms my basel
 
 #### Recommendations
 
-As someone who has worked with residential property data before, I understand that there is a differnce in tax value and assessed property (or market) value. Tax value is calculated by the county where the property is located and is calculated by an assessor from that county. The assessor looks at comps (comperable properties) that have recently been sold, the value of recent structural improvements, and the cost of replacing the home (or the property it's on) if it were destroyed. Tax value usually represents 80% of market value. Market value also relies on comps, but also on appraisals, which are usually based on square footage. In the future, I would base this project around predicting market value.
+- Safety and school proximity are both factors that have been shown to have a big effect on neighborhood value and curb appeal. Adding in a metric that tracks the crime rates as well as the closest public and private K-12 schools around the neighborhood will probably probably have an impact on a home's assessed value.
+
+#### How to Rerun This Project:
+
+1. Accessibility
+  - This data was acquired from the CodeUp database. To access it, you will need the appropriate credentials. Follow the steps outlined in the zwrangle.py file to create eny.py credentials. Then use those credentials to access the data. ***DO NOT push your env.py credentials into your repo!!****
+2. Clone the following files in this repository:
+  - .gitignore
+  - zwrangle.py
+  - zillow_final.ipynb
+3. Run the zillow_final.ipynb notebook
